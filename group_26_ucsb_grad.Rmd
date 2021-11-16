@@ -5,8 +5,9 @@ date: "11/15/2021"
 output: html_document
 ---
 
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE) # remove warnings
 library(tidyverse) # attach packages
 library(here)
 ```
@@ -19,9 +20,9 @@ ucsb_grad <- read_csv(here("data", "ucsb_grad_data.csv")) # read in data
 ggplot(data = ucsb_grad, aes(x = year_abbr, y = domestic_enrollment)) +
   geom_col(aes(fill = ethnicity), position = "fill") + # updated column from absolute counts to proportions
   theme_minimal() +
-  labs(x = "Year", # update axis labels
-       y = "Domestic Enrollment",
-       title = "UCSB Domestic Graduate Enrollment Over Time",
-       caption = "Data: UCSB Office of Budget and Planning Campus Profiles (2008 - 2019)")
+  labs(x = "Year", # update x-axis label
+       y = "Domestic Enrollment", # update y-axis label
+       title = "UCSB Domestic Graduate Enrollment Over Time", # add title
+       caption = "Fig.1: UCSB Office of Budget & Planning student ethnicities (2008 - 2019)") # add caption with data citation 
 ```
 
