@@ -1,0 +1,17 @@
+---
+title: "Group 26 UCSB domestic grad enrollment"
+author: "Cristina Robinson and Taylor Gries"
+date: "11/15/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse) # attach packages
+library(here)
+```
+
+```{r}
+ucsb_grad <- read_csv(here("data", "ucsb_grad_data.csv")) # read in data
+```
+
